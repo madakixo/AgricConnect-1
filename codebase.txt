@@ -1,0 +1,28 @@
+agri-marketplace/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config.py
+│   ├── database.py
+│   ├── dependencies.py          ← NEW
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py             ← NEW
+│   │   └── produce_listing.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── listing.py
+│   │   └── auth.py             ← NEW (Token, UserCreate, etc.)
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── listings.py
+│   │   └── auth.py             ← NEW
+│   ├── crud/
+│   │   ├── listing.py
+│   │   └── user.py             ← NEW
+│   └── utils/
+│       ├── cloudinary.py
+│       └── security.py         ← NEW (hash, JWT functions)
+├── .env
+├── requirements.txt
+└── README.md                   ← Updated below

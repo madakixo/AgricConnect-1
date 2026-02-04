@@ -1,0 +1,13 @@
+flask
+flask-cors
+gunicorn
+sqlalchemy>=2.0
+geoalchemy2
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+cloudinary
+python-dotenv
+shapely
+email-validator
+# python-multipart  # Not strictly needed for Flask unless using specific extensions, but keeping if previously used for heavy lifting, otherwise Flask handles multipart.
