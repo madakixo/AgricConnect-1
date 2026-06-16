@@ -1,7 +1,9 @@
-from sqlalchemy import Column, Integer, String, Enum
-from sqlalchemy.sql import func
-from ..database import Base
 import enum
+
+from sqlalchemy import Boolean, Column, DateTime, Enum, Integer, String, text
+from sqlalchemy.sql import func
+
+from ..database import Base
 
 
 class Role(enum.Enum):
@@ -18,5 +20,6 @@ class User(Base):
     email = Column(String(255), unique=True, index=True, nullable=False)
     full_name = Column(String(100))
     hashed_password = Column(String(255), nullable=False)
-    role = Column(Enum(Role), default=Role.buyer, nullable=False)
-    created_at = Column(String, server_default=func.now())
+    role = Column(Enum(Role, native_enum=False), default=Role.buyer, nullable=False)
+    is_active = Column(Boolean, nullable=False, server_default=text("true"), default=True)
+    created_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())

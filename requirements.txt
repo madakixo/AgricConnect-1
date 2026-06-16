@@ -1,6 +1,8 @@
 flask
 flask-cors
 gunicorn
+pydantic>=2.0
+pydantic-settings>=2.0
 sqlalchemy>=2.0
 geoalchemy2
 psycopg2-binary

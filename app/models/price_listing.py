@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, ARRAY
 from sqlalchemy.dialects.postgresql import TIMESTAMP
+from sqlalchemy.sql import func
 from geoalchemy2 import Geography
 from ..database import Base
 
@@ -19,4 +20,4 @@ class ProduceListing(Base):
     market_name = Column(String(100))
     images = Column(ARRAY(String))  # list of Cloudinary URLs
     harvest_date = Column(TIMESTAMP(timezone=True))
-    created_at = Column(TIMESTAMP(timezone=True), server_default="now()")
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
